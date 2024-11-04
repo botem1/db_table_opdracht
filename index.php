@@ -46,18 +46,7 @@
         </tbody>
 	</table>
     <canvas id="canvas" width="150" height="150"></canvas>
-<script type="application/javascript">
-      function draw() {
-        const canvas = document.getElementById("canvas");
-        if (canvas.getContext) {
-          const ctx = canvas.getContext("2d");
- 
-          ctx.fillStyle = "rgb(200 0 0)";
-          ctx.fillRect(0, 0, 150, 150);
-        }
-      }
-      draw();
-</script>
+
 <script>
 	const canvas = document.getElementById("canvas");
 	const ctx = canvas.getContext("2d");
