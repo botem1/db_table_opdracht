@@ -1,0 +1,19 @@
+table {
+    table-layout: fixed;
+    width: 75%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+tbody tr:nth-child(even) {
+    background-color: rgb(180, 173, 173);
+}
+
+thead{
+    background-color: rgb(143, 140, 140); 
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+}
