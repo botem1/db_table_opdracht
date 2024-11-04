@@ -45,7 +45,52 @@
             <?php require 'display_table.php'; ?>
         </tbody>
 	</table>
+    <canvas id="canvas" width="150" height="150"></canvas>
+<script type="application/javascript">
+      function draw() {
+        const canvas = document.getElementById("canvas");
+        if (canvas.getContext) {
+          const ctx = canvas.getContext("2d");
+ 
+          ctx.fillStyle = "rgb(200 0 0)";
+          ctx.fillRect(0, 0, 150, 150);
+        }
+      }
+      draw();
+</script>
+<script>
+	const canvas = document.getElementById("canvas");
+	const ctx = canvas.getContext("2d");
+	ctx.globalCompositeOperation = "source-over";
+	const grad=ctx.createRadialGradient(75,75,5,75,75,75);
+	grad.addColorStop(0.2,"blue");
+	grad.addColorStop(0.3,"yellow");
+	grad.addColorStop(0.34,"red");
+ 
+	ctx.fillStyle = grad;
+	ctx.fillRect(0,0,150,150);
+ 
+	ctx.beginPath();
+	ctx.moveTo(0, 0);
+	ctx.lineTo(150, 150);
+	ctx.lineWidth = 1;
+	ctx.strokeStyle = "black";
+	ctx.stroke();
+ 
+	ctx.beginPath();
+	ctx.moveTo(0, 150);
+	ctx.lineTo(150, 0);
+	ctx.lineWidth = 1;
+	ctx.stroke();
+	ctx.beginPath();
+	ctx.arc(75, 75, 75, 0, 2 * Math.PI);
+	ctx.stroke();
+	ctx.font = "16px Verdana";
+	ctx.strokestyle = "red";
+	ctx.strokeText("Hello Blue Sun",21,45);
 
+ 
+	</script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="main.js"></script>
   </body>
