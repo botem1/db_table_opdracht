@@ -2,10 +2,6 @@
 
 require 'db.php';
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 $result = $con->query("
     SELECT e.employee_id, e.first_name, e.last_name, d.department_name
     FROM employees e
